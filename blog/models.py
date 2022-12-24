@@ -17,6 +17,9 @@ class Post(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     udated_date = models.DateTimeField(auto_now=True)
 
-
-    #def __str__(self):
-        #return '{} - {}' .format(self.id ,self.title )
+    class Meta:
+        ordering = ['-created_date']
+    
+    def __str__(self):
+        return self.title
+        
