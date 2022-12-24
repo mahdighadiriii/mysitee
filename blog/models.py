@@ -18,5 +18,5 @@ class Post(models.Model):
     udated_date = models.DateTimeField(auto_now=True)
 
 
-    def __str__(self):
-        return '{} - {}' .format(self.id ,self.title )
+    #def __str__(self):
+        #return '{} - {}' .format(self.id ,self.title )
