@@ -1,5 +1,7 @@
 from django.contrib import admin
 from blog.models import Post
+from django.db import models
+
 
 # Register your models here.
 class PostAdmin(admin.ModelAdmin):
