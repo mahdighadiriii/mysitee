@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load blog-tags %}
 {% block content %}
     <!-- start banner Area -->
     <section class="banner-area relative blog-home-banner" id="home">
@@ -93,7 +94,7 @@
                             <ul class="tags">
                                 
                                 {% for cat in post.category.all %}
-                                <a href="#"> {{cat.name}},</a> {% if not forloop.last %},{% endif %} 
+                                <a href="{% url 'blog:category' cat_name=cat.name %}"> {{cat.name}},</a> {% if not forloop.last %},{% endif %} 
                                 {% endfor %}
 
                                     <a href="#">Food,</a>
@@ -174,8 +175,7 @@
 
                             {% include 'blog/blog-popularposts.html' %}
                        
-                        
-                            {% include 'blog/blog-post-categories.html' %}
+                            {% postcategories %}
                       
                             {% include 'blog/blog-newsletter.html' %}
 
